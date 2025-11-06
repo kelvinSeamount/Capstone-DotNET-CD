@@ -31,7 +31,7 @@ spec:
       serviceAccountName: noteapp-sa
       containers:
         - name: dotnet-noteapp
-          image: castromeka/noteapp:v5
+          image: castromeka/noteapp:v8
           ports:
             - containerPort: 5050
           env:
