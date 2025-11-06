@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Git Checkout') {
             steps {
-                echo 'Building...'
-                // Add build steps here
+               git branch: 'main', credentialsId: 'git-token', url: 'https://github.com/kelvinSeamount/Capstone-DotNET-CD.git'
             }
         }
         stage('Test') {
