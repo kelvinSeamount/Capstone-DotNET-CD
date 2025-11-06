@@ -28,15 +28,15 @@ spec:
           {{ .Data.data.mongodb_connectionstring }}
           {{- end }}
       spec:  
-      ServiceAccountName: noteapp-sa
-      containers:
-        - name: dotnet-noteapp
-          image: castromeka/noteapp:v3
-          ports:
-            - containerPort: 5050
-          env:
-            - name: DOTNET_ENVIRONMENT
-              value: Development
+        serviceAccountName: noteapp-sa
+        containers:
+          - name: dotnet-noteapp
+            image: castromeka/noteapp:v5
+            ports:
+              - containerPort: 5050
+            env:
+              - name: DOTNET_ENVIRONMENT
+                value: Development
 
 ---
 
