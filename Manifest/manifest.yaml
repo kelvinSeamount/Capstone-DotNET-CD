@@ -22,21 +22,21 @@ spec:
       annotations:
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/role: "noteapp"
-        vault.hashicorp.com/agent-inject-secreat-mongodb_connectionstring: "secret/data/noteapp"
-        vault.hashicorp.com/agent-inject-template-mongodb__connectionstring: |
+        vault.hashicorp.com/agent-inject-secret-mongodb_connectionstring: "secret/data/noteapp"
+        vault.hashicorp.com/agent-inject-template-mongodb_connectionstring: |
           {{- with secret "secret/data/noteapp" -}}
           {{ .Data.data.mongodb_connectionstring }}
           {{- end }}
-      spec:  
-        serviceAccountName: noteapp-sa
-        containers:
-          - name: dotnet-noteapp
-            image: castromeka/noteapp:v5
-            ports:
-              - containerPort: 5050
-            env:
-              - name: DOTNET_ENVIRONMENT
-                value: Development
+    spec:  
+      serviceAccountName: noteapp-sa
+      containers:
+        - name: dotnet-noteapp
+          image: castromeka/noteapp:v5
+          ports:
+            - containerPort: 5050
+          env:
+            - name: DOTNET_ENVIRONMENT
+              value: Development
 
 ---
 
@@ -51,4 +51,4 @@ spec:
   ports:
     - port: 80
       targetPort: 5050
-  type: ClusterIP    
+  type: ClusterIP
