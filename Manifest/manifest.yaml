@@ -25,7 +25,7 @@ spec:
         vault.hashicorp.com/agent-inject-secret-mongodb__connectionstring: "secret/data/noteapp"
         vault.hashicorp.com/agent-inject-template-mongodb__connectionstring: |
           {{- with secret "secret/data/noteapp" -}}
-          {{ .Data.data.mongodb_connectionstring }}
+          {{ .Data.data.mongodb__connectionstring }}
           {{- end }}
     spec:  
       serviceAccountName: noteapp-sa
