@@ -11,4 +11,38 @@ Deployment Flow
 
     Git Checkout CD pipeline pulls latest Kubernetes manifests
 
-    Deploy: Apply manifests to EKS cluster (Deployment, Service, Ingress, SSL)
+    Deploy Apply manifests to EKS cluster (Deployment, Service, Ingress, SSL)
+
+    Verify Check pods, services, and ingress status
+
+    Notify Send email notification with deployment status
+
+
+                            Technology Stack
+
+
+Infrastructure
+
+    AWS EKS Managed Kubernetes cluster (mekadevops-cluster)
+
+    Kubernetes for container orchestration
+
+    Jenkins CD automation server running on EC2
+
+
+Security & Secrets
+
+    HashiCorp Vault Secrets management for MongoDB connection string
+
+    Cert-Manager Automated SSL/TLS certificate management
+
+    Let's Encrypt Free SSL certificates (Production)
+
+
+Networking
+
+    Nginx Ingress Controller External traffic routing
+
+    Domain piroo.online & www.piroo.online 
+
+    
