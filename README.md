@@ -25,7 +25,7 @@ Deployment Flow
     Notify Send email notification with deployment status
 
 
-                            Technology Stack
+                      
 
 
 Infrastructure
