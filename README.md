@@ -5,6 +5,13 @@
                                 Overview
 This repository contains the Continuous Deployment (CD) pipeline for a .NET Note Application deployed on AWS EKS (Kubernetes). The pipeline automates the deployment process, manages SSL certificates, integrates with HashiCorp Vault for secrets management, and provides verification of successful deployments.
 
+This CD pipeline works in conjunction with the CI pipeline and the repo can be found here :https://github.com/kelvinSeamount/Capstone-DotNET-CI-
+
+
+The entire AWS infrastructure for this project is managed as code using Terraform in a separate repository.https://github.com/kelvinSeamount/Capstone-Infrastructure
+
+
+
 Deployment Flow
 
     Trigger CI pipeline completes successfully and updates CD repository
@@ -45,4 +52,5 @@ Networking
 
     Domain piroo.online & www.piroo.online 
 
-    
+
+
